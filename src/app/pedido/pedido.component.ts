@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MatTableDataSource } from '@angular/material/table';
+import { EMPANADAS } from '../dominio/lista.gustos';
 
 @Component({
   selector: 'app-pedido',
@@ -6,10 +8,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./pedido.component.css']
 })
 export class PedidoComponent implements OnInit {
+  dataSource = new MatTableDataSource()
+  columnasAMostrar: string[] = ['gusto', 'cantidad'];
 
   constructor() { }
 
   ngOnInit() {
+    this.dataSource.data = EMPANADAS;
   }
 
 }

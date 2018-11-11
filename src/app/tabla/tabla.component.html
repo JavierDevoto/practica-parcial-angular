@@ -1,0 +1,22 @@
+<table mat-table [dataSource]="dataSource">
+  <ng-container matColumnDef="gusto">
+    <th mat-header-cell *matHeaderCellDef> Gusto </th>
+    <td mat-cell *matCellDef="let elemento"> {{elemento.gusto}} </td>
+  </ng-container>
+  <ng-container matColumnDef="cantidad">
+    <th mat-header-cell *matHeaderCellDef> Cantidad </th>
+    <td mat-cell *matCellDef="let elemento"> 
+      <span>
+        <button mat-stroked-button (click)="restar(elemento)"><</button>
+        <span>{{elemento.cantidad}}</span>
+        <button mat-stroked-button (click)="sumar(elemento)">></button>
+      </span> 
+    </td>
+  </ng-container>
+  <ng-container matColumnDef="soloCantidad">
+    <th mat-header-cell *matHeaderCellDef> Cantidad </th>
+    <td mat-cell *matCellDef="let elemento"> {{elemento.gusto}} </td>
+  </ng-container>
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>

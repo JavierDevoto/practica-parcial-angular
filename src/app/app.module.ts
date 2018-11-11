@@ -7,19 +7,24 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { PedidoComponent } from './pedido/pedido.component';
 import { ContenedorComponent } from './contenedor/contenedor.component';
-
+import { MatTableModule } from '@angular/material/table';
+import { MatButtonModule } from '@angular/material/button';
+import { TablaComponent } from './tabla/tabla.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PedidoComponent,
-    ContenedorComponent
+    ContenedorComponent,
+    TablaComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    MatCardModule
+    MatCardModule,
+    MatTableModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]
