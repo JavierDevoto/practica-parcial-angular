@@ -1,3 +1,7 @@
-.boton {
-    margin: 8px;
+.buscador {
+    width: 600px;
+}
+
+.contenedor-tabla {
+    max-height: 400px;
 }

@@ -1,8 +1,13 @@
 <app-contenedor>
     <h2>Realice su Pedido</h2>
-    <app-tabla 
-        [dataSource]="listaDeGustos" 
-        [columnsToDisplay]="columnasAMostrar">
-    </app-tabla>
-    <button class="boton" mat-raised-button color="primary" [routerLink]="[ '/compra']">Finalizar Pedido</button>
+    <mat-form-field class="buscador">
+        <input class="buscador" matInput (keyup)="applyFilter($event.target.value)" placeholder="buscar">
+    </mat-form-field>
+    <div>
+        <app-tabla 
+            [dataSource]="listaDeGustos" 
+            [columnsToDisplay]="columnasAMostrar">
+        </app-tabla>
+    </div>
+    <button class="boton" mat-raised-button color="primary" (click)="finalizarPedido()" [routerLink]="[ '/compra']">Finalizar Pedido</button>
 </app-contenedor>

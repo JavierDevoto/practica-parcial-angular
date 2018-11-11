@@ -12,6 +12,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { TablaComponent } from './tabla/tabla.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { CompraComponent } from './compra/compra.component';
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { CompraComponent } from './compra/compra.component';
     MatCardModule,
     MatTableModule,
     MatButtonModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]

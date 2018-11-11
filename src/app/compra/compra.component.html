@@ -4,4 +4,6 @@
         [dataSource]="listaDeCompra" 
         [columnsToDisplay]="columnasAMostrar">
     </app-tabla>
+    <h3>Total a pagar: ${{montoAPagar}}</h3>
+    <button class="boton" mat-raised-button color="primary" [routerLink]="[ '/pedido']">Nuevo Pedido</button>
 </app-contenedor>
