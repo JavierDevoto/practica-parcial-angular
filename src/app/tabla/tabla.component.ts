@@ -5,10 +5,10 @@ import { MatTableDataSource } from '@angular/material/table';
 @Component({
   selector: 'app-tabla',
   templateUrl: './tabla.component.html',
-  styleUrls: ['./tabla.component.css']
+  styleUrls: ['./tabla.component.scss']
 })
 export class TablaComponent implements OnInit {
-  @Input() dataArray: MatTableDataSource<Empanada> = new MatTableDataSource();
+  @Input() dataSource: MatTableDataSource<Empanada> = new MatTableDataSource();
   @Input() columnsToDisplay: String[] = [];
 
   constructor() { }
@@ -17,10 +17,10 @@ export class TablaComponent implements OnInit {
   }
 
   sumar(empanada: Empanada){
-    empanada.sumar;
+    empanada.cantidad ++;
   }
 
   restar(empanada: Empanada){
-    empanada.restar;
+    empanada.cantidad --;
   }
 }

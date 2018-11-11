@@ -1,8 +1,8 @@
 <app-contenedor>
     <h2>Realice su Pedido</h2>
     <app-tabla 
-        [dataArray]="listaDeGustos" 
+        [dataSource]="listaDeGustos" 
         [columnsToDisplay]="columnasAMostrar">
     </app-tabla>
+    <button class="boton" mat-raised-button color="primary" [routerLink]="[ '/compra']">Finalizar Pedido</button>
 </app-contenedor>
-  

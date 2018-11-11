@@ -3,11 +3,11 @@ export class Empanada {
     gusto: string;
     cantidad: number = 0;
 
-    sumar(){
-        this.cantidad ++;
-    }
+    // sumar(){
+    //     this.cantidad ++;
+    // }
 
-    restar(){
-        this.cantidad --;
-    }
+    // restar(){
+    //     this.cantidad --;
+    // }
 }

@@ -10,13 +10,16 @@ import { ContenedorComponent } from './contenedor/contenedor.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatButtonModule } from '@angular/material/button';
 import { TablaComponent } from './tabla/tabla.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { CompraComponent } from './compra/compra.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PedidoComponent,
     ContenedorComponent,
-    TablaComponent
+    TablaComponent,
+    CompraComponent
   ],
   imports: [
     BrowserModule,
@@ -24,7 +27,8 @@ import { TablaComponent } from './tabla/tabla.component';
     AppRoutingModule,
     MatCardModule,
     MatTableModule,
-    MatButtonModule
+    MatButtonModule,
+    MatFormFieldModule
   ],
   providers: [],
   bootstrap: [AppComponent]

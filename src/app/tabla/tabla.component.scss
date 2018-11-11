@@ -1,0 +1,25 @@
+.tabla {
+    .mat-column-gusto {
+        width: 400px;
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+    .mat-column-cantidad {
+        width: 200px;
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+    .mat-column-soloCantidad {
+        width: 200px;
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+    .fila-elemento {
+        padding-left: 4px;
+        padding-right: 4px;
+    }
+    .mat-header-cell {
+        font-size: 1.2rem;
+        font-weight: 300;
+    }
+}

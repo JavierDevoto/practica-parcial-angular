@@ -8,13 +8,13 @@ import { EMPANADAS } from '../dominio/lista.gustos';
   styleUrls: ['./pedido.component.css']
 })
 export class PedidoComponent implements OnInit {
-  dataSource = new MatTableDataSource()
+  listaDeGustos = new MatTableDataSource()
   columnasAMostrar: string[] = ['gusto', 'cantidad'];
 
   constructor() { }
 
   ngOnInit() {
-    this.dataSource.data = EMPANADAS;
+    this.listaDeGustos.data = EMPANADAS;
   }
 
 }
