@@ -4,6 +4,8 @@ import { PedidosService } from '../servicios/pedidos.service';
 import { EmpanadasService } from '../servicios/empanadas.service';
 import { Pedido } from '../dominio/pedido';
 import { Empanada } from '../dominio/empanada';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-pedido',
@@ -15,7 +17,7 @@ export class PedidoComponent implements OnInit {
   columnasAMostrar: string[] = ['gusto', 'cantidad'];
   pedidoActual: Pedido = new Pedido();
 
-  constructor(private pedidosService: PedidosService, private empanadasService: EmpanadasService ) {}
+  constructor(private pedidosService: PedidosService, private empanadasService: EmpanadasService,private router: Router , public errorSnackBar: MatSnackBar ) {}
 
   ngOnInit() {
     this.cargarListaDeEmpanadas();
@@ -28,8 +30,23 @@ export class PedidoComponent implements OnInit {
   }
 
   finalizarPedido(){
-    this.actualizarPedido();
-    this.resetearCantidades();
+    if(this.validar()){
+      this.actualizarPedido();
+      this.resetearCantidades();
+      this.continuarACompra();
+    }else{
+      this.mostrarError();
+    }
+  }
+
+  continuarACompra(){
+    this.router.navigateByUrl('/compra');
+  }
+
+  validar(): boolean{
+    var cantidad = 0;
+    this.listaDeGustos.data.forEach(empanada => cantidad += empanada.cantidad)
+    return cantidad >= 4
   }
 
   actualizarPedido(){
@@ -44,6 +61,12 @@ export class PedidoComponent implements OnInit {
 
   applyFilter(filterValue: string) {
     this.listaDeGustos.filter = filterValue.trim().toLowerCase();
+  }
+
+  mostrarError() {
+    this.errorSnackBar.open('Debe pedir al menos 4 empanadas', "Cerrar", {
+      duration: 2000,
+    });
   }
 
 }

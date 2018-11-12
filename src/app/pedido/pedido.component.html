@@ -3,11 +3,9 @@
     <mat-form-field class="buscador">
         <input class="buscador" matInput (keyup)="applyFilter($event.target.value)" placeholder="buscar">
     </mat-form-field>
-    <div>
-        <app-tabla 
-            [dataSource]="listaDeGustos" 
-            [columnsToDisplay]="columnasAMostrar">
-        </app-tabla>
-    </div>
-    <button class="boton" mat-raised-button color="primary" (click)="finalizarPedido()" [routerLink]="[ '/compra']">Finalizar Pedido</button>
+    <app-tabla 
+        [dataSource]="listaDeGustos" 
+        [columnsToDisplay]="columnasAMostrar">
+    </app-tabla>
+    <button class="boton" mat-raised-button color="primary" (click)="finalizarPedido()">Finalizar Pedido</button>
 </app-contenedor>

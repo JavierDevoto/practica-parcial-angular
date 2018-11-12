@@ -1,22 +1,24 @@
-<table class="tabla" mat-table [dataSource]="dataSource">
-  <ng-container matColumnDef="gusto">
-    <th mat-header-cell *matHeaderCellDef> Gusto </th>
-    <td mat-cell *matCellDef="let elemento"> {{elemento.gusto}} </td>
-  </ng-container>
-  <ng-container matColumnDef="cantidad">
-    <th mat-header-cell *matHeaderCellDef> Cantidad </th>
-    <td mat-cell *matCellDef="let elemento">
-      <span>
-        <button class="fila-elemento" mat-stroked-button (click)="restar(elemento)" [disabled]="!elemento.cantidad > 0"><</button>
-        <span class="fila-elemento">{{elemento.cantidad}}</span>
-        <button class="fila-elemento" mat-stroked-button (click)="sumar(elemento)">></button>
-      </span> 
-    </td>
-  </ng-container>
-  <ng-container matColumnDef="soloCantidad">
-    <th mat-header-cell *matHeaderCellDef> Cantidad </th>
-    <td mat-cell *matCellDef="let elemento"> {{elemento.cantidad}} </td>
-  </ng-container>
-  <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
-  <tr mat-row *matRowDef="let row; columns: columnsToDisplay;"></tr>
-</table>
+<div class="contenedor-tabla">
+  <table class="tabla" mat-table [dataSource]="dataSource">
+    <ng-container matColumnDef="gusto">
+      <th mat-header-cell *matHeaderCellDef> Gusto </th>
+      <td mat-cell *matCellDef="let elemento"> {{elemento.gusto}} </td>
+    </ng-container>
+    <ng-container matColumnDef="cantidad">
+      <th mat-header-cell *matHeaderCellDef> Cantidad </th>
+      <td mat-cell *matCellDef="let elemento">
+        <span>
+          <button class="fila-elemento" mat-stroked-button (click)="restar(elemento)" [disabled]="!elemento.cantidad > 0"><</button>
+          <span class="fila-elemento">{{elemento.cantidad}}</span>
+          <button class="fila-elemento" mat-stroked-button (click)="sumar(elemento)">></button>
+        </span> 
+      </td>
+    </ng-container>
+    <ng-container matColumnDef="soloCantidad">
+      <th mat-header-cell *matHeaderCellDef> Cantidad </th>
+      <td mat-cell *matCellDef="let elemento"> {{elemento.cantidad}} </td>
+    </ng-container>
+    <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+    <tr mat-row *matRowDef="let row; columns: columnsToDisplay;"></tr>
+  </table>
+</div>

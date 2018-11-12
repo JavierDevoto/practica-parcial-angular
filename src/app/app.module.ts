@@ -13,6 +13,7 @@ import { TablaComponent } from './tabla/tabla.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { CompraComponent } from './compra/compra.component';
 import { MatInputModule } from '@angular/material/input';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { MatInputModule } from '@angular/material/input';
     MatTableModule,
     MatButtonModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
